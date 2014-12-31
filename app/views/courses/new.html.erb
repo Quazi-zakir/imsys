@@ -1,0 +1,21 @@
+<h2>Course</h2>
+<p>Add new course</p>
+
+<%= form_for @course do |f| %>
+    <% if @course.errors.any? %>
+        <ul>
+          <% @course.errors.full_messages.each do |message| %>
+              <li><%= message%></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :course_name  %><br />
+      <%= f.text_field :course_name  %>
+    </p>
+
+    <p>
+      <%= f.submit "Add a New Course"  %>
+    </p>
+
+<% end %>
