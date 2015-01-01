@@ -1,2 +1,21 @@
-<h1>Sections#new</h1>
-<p>Find me in app/views/sections/new.html.erb</p>
+<h2>Section</h2>
+<p>Add new Section</p>
+
+<%= form_for @section do |f| %>
+    <% if @section.errors.any? %>
+        <ul>
+          <% @section.errors.full_messages.each do |message| %>
+              <li><%= message%></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :section_name  %><br />
+      <%= f.text_field :section_name  %>
+    </p>
+
+    <p>
+      <%= f.submit "Add a New Section"  %>
+    </p>
+
+<% end %>

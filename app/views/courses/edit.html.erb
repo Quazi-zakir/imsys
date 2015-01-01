@@ -1,0 +1,14 @@
+<h2>COURSE</h2>
+<p>Edit course</p>
+
+<%= form_for @course do |f| %>
+    <p>
+      <%= f.label :course_name  %><br />
+      <%= f.text_field :course_name  %>
+    </p>
+
+    <p>
+      <%= f.submit " Update Course"  %>
+    </p>
+
+<% end %>

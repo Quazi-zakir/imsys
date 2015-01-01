@@ -1,2 +1,14 @@
-<h1>Sections#edit</h1>
-<p>Find me in app/views/sections/edit.html.erb</p>
+<h2>Section</h2>
+<p>Edit Section</p>
+
+<%= form_for @section do |f| %>
+    <p>
+      <%= f.label :section_name  %><br />
+      <%= f.text_field :section_name  %>
+    </p>
+
+    <p>
+      <%= f.submit " Update Section"  %>
+    </p>
+
+<% end %>
