@@ -19,6 +19,14 @@ class CoursesController < ApplicationController
   #------------------------------------------------------------------------------------------------------
   def show
     @course = Course.find(params[:id])
+    @rec_course_section = CourseSection.find(params[:id])
+    #@course_sections.joins(:pets).where("pets.name != ?", "fluffy")
+    #User.joins(:pets).where("pets.name != ?", "fluffy")
+    #raise @section = CourseSection.find_by_course_id(params[:id]).inspect
+    #@section=@course.sections.build
+    #@course_section = CourseSection.find_by_course_id(params[:id])
+
+
   end
   #------------------------------------------------------------------------------------------------------
   def edit
