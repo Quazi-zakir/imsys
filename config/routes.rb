@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
 
-  resources :courses
+  resources :courses do
+    collection do
+      get 'add_course_section'
+      delete 'delete_couse_sctions'
+    end
+
+  end
   resources :sections
   root to: 'courses#index' # Default routes
 

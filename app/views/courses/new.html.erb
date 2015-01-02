@@ -13,7 +13,10 @@
       <%= f.label :course_name  %><br />
       <%= f.text_field :course_name  %>
     </p>
+    <% f.fields_for :sections do |s| %>
 
+    <% s.collection_select :sections, :section_id, @sections.map{|sc| [sc.section_name, sc.id]}, :prompt => "select a section" %>
+    <% end%>
     <p>
       <%= f.submit "Add a New Course"  %>
     </p>
