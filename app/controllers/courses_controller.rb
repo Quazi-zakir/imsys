@@ -60,7 +60,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:cid])
     # raise Section.find(params[:sid]).inspect
     s = Section.find(params[:sid])
-    cs = CourseSection.all.where(:course_id => @course.id, section_id: s.id).first_or_create
+    cs = CourseSection.all.where(:course_id => @course.id, section_id: s.id).first_or_create  # prevent duplication and add new
     #raise cs.inspect
     redirect_to @course, :notice=> "Your course and section now tagged"
   end
