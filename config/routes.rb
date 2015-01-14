@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :sections
   root to: 'courses#index' # Default routes
 
+  resources :students
+
+  resources :teachers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
