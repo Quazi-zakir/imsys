@@ -40,7 +40,8 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'binding_of_caller',        group: :development
+gem 'better_errors', '2.1.1',   group: :development
 gem 'decent_exposure', '2.3.2'
 
 #gem 'haml', '~> 4.0.5'

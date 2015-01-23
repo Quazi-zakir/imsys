@@ -7,7 +7,7 @@
 <table  style="width:100%; border:0px solid #000" cellspacing=0 cellpadding=0>
   <tr>
     <td colspan="2">List all Student</td>
-    <td style="width:29%;text-align: right;" colspan="3"><%= link_to "Add new Course", new_course_path %></td>
+    <td style="width:29%;text-align: right;" colspan="3"><%= link_to "Add new Student", new_student_path %></td>
   </tr>
 
   <tr style="width:100%; border:1px solid #000">
@@ -28,6 +28,7 @@
             <td  style="width:10%; border:1px solid #000"><%= item.age %></td>
             <td  style="width:10%; border:1px solid #000"><%= item.gender %></td>
             <td  style="width:29%;text-align: right;border:1px solid #000">
+              <%= link_to 'Show', item %> |
               <%= link_to "Edit", edit_student_path(item)  %> |
               <%= link_to "Delete", item, :confirm => "Are you sure?", :method => :delete  %>
             </td>

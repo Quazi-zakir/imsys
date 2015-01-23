@@ -1,0 +1,48 @@
+<h2>Teacher</h2>
+
+<br />
+<!-- Check record count -->
+
+<!-- Display records -->
+<table  style="width:100%; border:0px solid #000" cellspacing=0 cellpadding=0>
+  <tr>
+    <td colspan="2">List all Teacher</td>
+    <td style="width:29%;text-align: right;" colspan="3"><%= link_to "Add new Student", new_teacher_path %></td>
+  </tr>
+
+  <tr style="width:100%; border:1px solid #000">
+    <td style="width:10%; border:1px solid #000">#</td>
+    <td  style="width:40%; border:1px solid #000">Teacher Name</td>
+    <td  style="width:10%; border:1px solid #000">Age</td>
+    <td  style="width:10%; border:1px solid #000">Gender</td>
+    <td  style="width:29%;text-align: right;border:1px solid #000">Action</td>
+  </tr>
+  <% if teachers.count.zero? %>
+      <tr><td colspan="5" style="text-align: center;;border:1px solid #000;">No Data Found!</td></tr>
+  <% else %>
+      <% @@i=0 %>
+      <% teachers.each do |item| %>
+          <tr style="width:100%; border:1px solid #000">
+            <td style="width:19%; border:1px solid #000"><%= @@i=@@i+1 %></td>
+            <td  style="width:40%; border:1px solid #000"><%= item.teacher_name %></td>
+            <td  style="width:10%; border:1px solid #000"><%= item.age %></td>
+            <td  style="width:10%; border:1px solid #000"><%= item.gender %></td>
+            <td  style="width:29%;text-align: right;border:1px solid #000">
+              <%= link_to 'Show', item %> |
+              <%= link_to "Edit", edit_teacher_path(item)  %> |
+              <%= link_to "Delete", item, :confirm => "Are you sure?", :method => :delete  %>
+            </td>
+          </tr>
+
+      <% end %>
+
+  <% end %>
+
+  <tr style="border:1px solid;">
+    <td colspan="2">
+      Total number of data is: <%= teachers.count %>
+    </td>
+    <td style="width:29%;text-align: right;" colspan="3"><%= link_to "Add new Course", new_teacher_path %></td></tr>
+
+
+</table>

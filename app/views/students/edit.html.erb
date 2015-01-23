@@ -1,0 +1,29 @@
+<h2>STUDENT</h2>
+<p>Update Student</p>
+
+<%= form_for existing_student do |f| %>
+    <% if existing_student.errors.any? %>
+        <ul>
+          <% existing_student.errors.full_messages.each do |message| %>
+              <li><%= message%></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :student_name  %><br />
+      <%= f.text_field :student_name  %>
+    </p>
+    <p>
+      <%= f.label :age  %><br />
+      <%= f.text_field :age  %>
+    </p>
+    <p>
+      <%= f.label :gender  %><br />
+      <%= f.text_field :gender  %>
+    </p>
+
+    <p>
+      <%= f.submit "Update Student"  %>
+    </p>
+
+<% end %>

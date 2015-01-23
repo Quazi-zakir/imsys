@@ -1,0 +1,29 @@
+<h2>TEACHER</h2>
+<p>Update Teacher</p>
+
+<%= form_for existing_teacher do |f| %>
+    <% if existing_teacher.errors.any? %>
+        <ul>
+          <% existing_teacher.errors.full_messages.each do |message| %>
+              <li><%= message%></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :teacher_name  %><br />
+      <%= f.text_field :teacher_name  %>
+    </p>
+    <p>
+      <%= f.label :age  %><br />
+      <%= f.text_field :age  %>
+    </p>
+    <p>
+      <%= f.label :gender  %><br />
+      <%= f.text_field :gender  %>
+    </p>
+
+    <p>
+      <%= f.submit "Update Teacher"  %>
+    </p>
+
+<% end %>

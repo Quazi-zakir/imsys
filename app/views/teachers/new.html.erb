@@ -1,0 +1,29 @@
+<h2>TEACHER</h2>
+<p>Add new Teacher</p>
+
+<%= form_for teacher do |f| %>
+    <% if teacher.errors.any? %>
+        <ul>
+          <% teacher.errors.full_messages.each do |message| %>
+              <li><%= message%></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :teacher_name  %><br />
+      <%= f.text_field :teacher_name  %>
+    </p>
+    <p>
+      <%= f.label :age  %><br />
+      <%= f.text_field :age  %>
+    </p>
+    <p>
+      <%= f.label :gender  %><br />
+      <%= f.text_field :gender  %>
+    </p>
+
+    <p>
+      <%= f.submit "Add Teacher"  %>
+    </p>
+
+<% end %>
